@@ -1,0 +1,667 @@
+<!DOCTYPE html><!-- Designed By Sayed Ali Alwedaie V 1.0 2014 --><html lang="fa"><head>
+
+<head:meta></head:meta>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="(*blog_title*) - (*blog_short_description*)" name="description">
+<meta content="(*blog_title*), Blog, Weblog, Persian, Iran, Iranian, Farsi, Weblogs, Blogs" name="keywords">
+
+<link href="(*rss_link*)" rel="alternate" title="(*blog_title*)" type="application/rss+xml">
+<link href="http://www.fontonline.ir/css/BYekan.css" rel="stylesheet" type="text/css">
+<link href="http://www.fontonline.ir/css/BHoma.css" rel="stylesheet" type="text/css">
+<link href="http://www.fontonline.ir/css/BRoya.css" rel="stylesheet" type="text/css">
+
+<title>(*blog_title*)</title>
+
+<style>
+
+/* Resets ----------------------------------------------------------------------*/
+
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input {
+	margin: 0;
+	padding: 0;
+}
+a:link, a:visited, a:hover {
+	color:#696969;
+	text-decoration: none;
+}
+/* Fonts -----------------------------------------------------------------------*/
+
+.yekan, h1, h2, h3, 
+.item_success, #post_list_title, .messages, .comment_details, 
+.comment-add-form, .comment-add-form input.sendbutton {
+	font-family: BYekan,'BYekan',tahoma;
+}
+h2, h3, .post_info {
+	font-weight: lighter;
+}
+.post_body {
+	font-size: 1.1em;
+	font-weight: lighter;
+	line-height: 1.5em;	
+}
+post_footer, .comment-add-form input.sendbutton {
+	font-size: 1em;
+}
+.post_info, .comment_date {
+	font-size: 0.85em;
+	line-height: 1.5em;
+}
+
+/* Colors ----------------------------------------------------------------------*/
+.post_info, #no_comments, .comment_date, #stat,
+#frmPrivateNotice, .smalltip {
+	color: #bebebe;
+}
+#site_title, .sidebar h3, .comment_reply, comment_website,
+.comment-add-form label, .comment-add-form input.sendbutton {
+	color: #696969;
+}
+
+/* Other General Styles --------------------------------------------------------*/
+#sidebar_wrp ul {
+	list-style-type: none; 
+}
+
+
+/* Special Effects -------------------------------------------------------------*/
+#menu a, #page_nav a, .comment-add-form input.sendbutton {
+		-webkit-transition: background-color 200ms ease-out;
+	    -moz-transition: all 200ms ease-out;  
+	    -ms-transition: all 200ms ease-out;  
+	    -o-transition: all 200ms ease-out;  
+	    transition: all 200ms ease-out;
+}
+#menu a:hover, #page_nav a:hover, .comment-add-form input.sendbutton:hover {
+	background: #bebebe;
+	color: white;
+}
+.selected {
+	
+}
+
+/* -----------------------------------------------------------------------------*/
+
+body {
+	text-align: right;
+	direction: rtl;
+	font-family: BRoya,'BRoya',tahoma;
+	-webkit-text-size-adjust: 100%;
+}
+#container {
+	width: 95%;
+	max-width: 675px;
+	margin: auto;
+	margin-top: 3em;
+	margin-bottom: 2em;
+}
+
+/* Top --------------------------------------------------------------- */
+#site_title {
+	font-size: 2em;
+	text-align: center;
+}
+#site_title h2 {
+	font-size: 0.5em;
+	margin-top: 0.5em;
+}
+#menu {
+	border-bottom: 1px solid #bebebe;
+	border-top: 1px solid #bebebe;
+	margin-top: 2em;
+	text-align: center;
+}
+#menu a {
+	padding: 1em 0.5em;
+	display: inline-block;
+}
+
+/* Body --------------------------------------------------------------- */
+#body_wrp {
+	margin-top: 3em;
+}
+#bodyposts {
+	margin-bottom: 2em;
+}
+.post_wrp {
+	border-bottom: 1px solid #bebebe;
+	margin-top: 2em;
+	padding-bottom: 2em;
+}
+.post_detail_wrp {
+	padding-bottom: 3em;
+}
+.post_list_wrp .post_image {
+	float: left;
+	width: 225px;
+	height: 225px;
+	overflow: hidden;
+	padding-right: 1em;
+}
+.post_list_wrp .post_image a img {
+	width: auto;
+	height: 100%;
+}
+.post_wrp .post_image img {
+	width: 100%;
+	height: auto;
+}
+.post_body {
+	margin: 1em 0 1em 0.75em;
+}
+.post_body a {
+	border-bottom: 1px solid #bebebe;
+}
+.post_detail_wrp .post_info {
+	margin-bottom: 1em;
+}
+.post_tags a {
+	padding: 0 0.5em;
+	border-right: 1px solid #bebebe;
+}
+.post_list_wrp .rate-box {
+	margin-top: 0.5em;
+}
+.comments {
+	float: right;
+	padding-left: 0.5em;
+	margin-left: 0.5em;
+	border-left: 1px solid #bebebe; 
+}
+#page_nav {
+	text-align: center;
+	border-bottom: 1px solid #bebebe;
+}
+#page_nav a {
+	display: inline-block;
+	padding: 0.5em;
+}
+
+/* Comments --------------------------------------------------------------- */
+.comments_wrp {
+	border-bottom: 1px solid #bebebe;
+}
+#comments_header {
+	margin-top: -2.5em;
+	text-align: center;
+	padding: 0 0 1em;
+}
+#comments_counter {
+	width: 3em;
+	padding: 1em 0;
+	border: 1px solid #bebebe;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+	background: white;
+}
+.post_comment {
+	line-height: 1.5em;
+	margin-bottom: 2em;
+}
+#no_comments {
+	padding-top: 0.5em;
+}
+.comment_body {
+	margin: 0.5em 0 1em;
+	margin: auto;
+	width: 66%;
+}
+.comment_reply {
+	margin: auto;
+	margin-top: 1em;
+	width: 66%;
+}
+.comment_reply_body {
+	margin-bottom:1em;
+}
+#comment_separater {
+	border-bottom: 1px solid #bebebe;
+}
+/* Reply */
+.commentAvatar {
+	display: none;
+}
+.comment-add-form {
+	padding: 1em 0;
+	line-height: 2em;
+	width: 66%;
+	margin: auto;
+}
+.comment-add-form .inputFix input, 
+.comment-add-form .formField2 select, 
+.comment-add-form textarea, 
+.comment-add-form #captchaInput {
+	outline: none;
+    border:1px solid #bebebe;
+    -webkit-appearance: none;
+    display: inline-block;
+    padding: 10px 0.5em;
+	border-radius: 0;
+}
+.comment-add-form .inputFix input, .comment-add-form .formField2 select {
+	width: 50%;
+}
+.comment-add-form textarea {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+#captchaInput{
+	float: right;
+	height: 10px;
+}
+.comment-add-form input.sendbutton {
+ 	display: inline-block; 
+ 	padding: 0.5em 1em;
+    border: 1px solid #bebebe;
+    background-color: white;
+    vertical-align: top; 
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 0;
+    float: left;
+}
+
+/* Sidebar --------------------------------------------------------------- */
+#sidebar_wrp {
+	overflow: hidden;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #bebebe;
+}
+.sidebar {
+	float: right;
+	width: 33.333333333333%;
+	margin-bottom: 1em;
+	line-height: 1.5em;
+	
+}
+.sidebar h3 {
+	display: inline-block;
+	padding-bottom: 0.2em;
+	margin-bottom: 0.2em;
+	border-bottom: 1px solid #bebebe;
+}
+#tagbox a {
+	padding-left: 0.5em;
+}
+
+/* Footer --------------------------------------------------------------- */
+#footer {
+	line-height: 1.5em;
+}
+#stat {
+	text-align: center;
+}
+#stat .stat_value {
+	margin-left: 0.5em;
+}
+
+/* Adaptive --------------------------------------------------------------- */
+.mobi #menu a:hover, .mobi #page_nav a:hover, .mobi .comment-add-form input.sendbutton:hover{}
+/*.phone.port .post_list_wrp .post_image {
+	position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}*/
+.phone.port .post_list_wrp .post_image {
+	width: 100%;
+	margin-bottom: 1em;
+}
+.phone.port .comment-add-form,
+.phone.port .comment-add-form .inputFix input, 
+.phone.port .comment-add-form .formField2 select, 
+.phone.port .comment-add-form textarea {
+	width: 95%;
+}
+.mobi .comment-add-form #frm_anon, 
+.mobi .comment-add-form #frm_isprivate, 
+.mobi .comment-add-form #frm_hide_mail {
+	padding: 1em;
+}
+.phone.port .sidebar {
+	width: 100%;
+}
+.phone.land .sidebar {
+	width: 50%;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		
+		<div id="site_title">
+			<h1><a href="(*blog_link*)">(*blog_title*)</a></h1>
+			<h2>(*blog_short_description*)</h2>
+		</div>
+		
+		<div class="yekan" id="menu">
+			<box:menu>
+				<view:menu>
+					<a class="(*menu_item_selected*)" href="(*menu_item_link*)">(*menu_item_title*)</a>
+				</view:menu>
+			</box:menu>
+		</div>
+		
+		<div id="header">
+		</div>
+		
+		<div id="body_wrp">
+		
+			<div id="bodyposts"> 
+	
+				<box:messages>
+					<view:messages>
+						<div class="item_(*message_type*)">(*message*)</div>
+					</view:messages>
+				</box:messages>
+				
+<!-- Start Post List Summary -->
+        		<box:post_list>
+					<check:if post_list_title>
+						<div class="yekan" id="post_list_title">(*post_list_title*)</div>
+					</check:if>   
+					<view:post_list>     
+			        	<div class="post_wrp post_list_wrp">
+			        		<check:if post_image>
+								<div class="post_image">
+									<a href="(*post_link*)"><img alt="(*post_title*)" src="(*post_image*)"></a>
+									<br>
+								</div>
+							</check:if>
+			            	<h2><a href="(*post_link*)">(*post_title*)</a></h2>
+							<div class="post_info yekan">(*post_date*)</div>
+							<div class="post_body">(*post_summary*)</div>
+							<div style="clear: both"></div>
+							<div class="post_footer yekan">
+								<div class="comments">
+									<a href="(*post_link*)#comments">(*post_comment_count*) نظر</a>
+								</div>
+								<div class="readmore">
+									<check:if post_has_read_more><a href="(*post_link*)">ادامه مطلب</a></check:if>
+								</div>
+								<!--<box:post_rating>
+									<div class="rate-box (*user_rated*)">
+										<span class="rate-button-box rate-up (*user_rated_up*)">
+											<a class="rate-button" href="(*rate_up_link*)" rel="nofollow" title="موافق">⬆(*up_rates*)</a>
+										</span>
+										<span class="rate-button-box rate-down (*user_rated_down*)">
+											<a class="rate-button" href="(*rate_down_link*)" rel="nofollow" title="مخالف">⬇(*down_rates*)</a>
+										</span>
+									</div>
+								</box:post_rating> -->
+							</div>
+							<!-- End post_footer -->
+						</div>
+						<!-- End post_wrp -->
+					</view:post_list>
+				</box:post_list>
+<!-- End Post List Summary -->
+<!-- Start Post Detail -->
+				<box:post_detail>
+			    	<div class="post_wrp post_detail_wrp">
+			            <h2><a href="(*post_link*)">(*post_title*)</a></h2>
+			            <div class="post_info yekan">(*post_date*)</div>
+						<check:if post_image>
+							<div class="post_image">
+								<a href="(*post_link*)"><img alt="(*post_title*)" src="(*post_image*)"></a>
+							</div>
+						</check:if>
+					    <article class="post_body">(*post_full_content*)</article>
+					    <box:post_tags>
+							<span class="post_tags yekan">
+								<br>
+	            		    	<view:post_tags>
+							  	<a href="(*tag_link*)">(*tag_name*)</a>
+							  	</view:post_tags>
+	            		    </span>
+	            		</box:post_tags>
+						<div class="post_footer yekan">
+							<!-- <box:post_rating>
+								<div class="rate-box (*user_rated*)">
+									<span class="rate-button-box rate-up (*user_rated_up*)">
+										<a class="rate-button" href="(*rate_up_link*)" rel="nofollow" title="موافق">⬆(*up_rates*)</a>
+									</span>
+									<span class="rate-button-box rate-down (*user_rated_down*)">
+										<a class="rate-button" href="(*rate_down_link*)" rel="nofollow" title="مخالف">⬇(*down_rates*)</a>
+									</span>
+								</div>
+							</box:post_rating> -->
+						</div>
+					</div>
+					<!-- End post_wrp -->	
+	
+<!-- Start Post_Comments -->
+					<box:post_comments>
+						<a name="comments"></a>
+						<div class="yekan" id="comments_header">
+							<h2><a href="(*post_link*)#comments"><span id="comments_counter">(*post_comment_count*)</span><br>دیدگاه</a></h2>
+							<check:if not post_comment_count>
+								<div id="no_comments">هیچ نظری هنوز ثبت نشده است</div>
+							</check:if>
+						</div>
+						<view:post_comments>
+							<a name="comment-(*comment_id*)"></a>
+							<div class="post_comment">
+								<div class="comment_details">
+									<a class="comment_name" href="(*comment_website*)">(*comment_fullname*)</a>
+									<check:if comment_website>
+										<a class="comment_website" href="(*comment_website*)" rel="nofollow" target="_blank" title="(*comment_website*)">🔗</a>
+									</check:if>
+									<div class="comment_date">(*comment_date format="%d %B %y"*)</div>
+								</div>
+								<div class="comment_body">(*comment_body*)</div>
+							
+								<check:if comment_reply>
+									<div class="comment_reply">
+											<div class="comment_reply_name">پاسخ:</div>
+									<div class="comment_reply_body">(*comment_reply*)</div>
+									</div>
+								</check:if>
+							</div>
+						</view:post_comments>
+					</box:post_comments>
+					<div id="comment_separater"></div>
+					<check:if post_has_send_comment>
+						<a name="send_comment"></a>
+						<div class="comment-add-form">(*comment_add_form*)</div>
+					</check:if>
+				</box:post_detail>
+<!-- End Post Detail -->
+<!-- Start Page Detail -->
+				<box:page_detail>
+					<div class="post_wrp page_detail_wrp">
+			            <h2><a href="(*page_link*)">(*page_title*)</a></h2>
+						<article class="post_body">(*page_content*)</article>
+					</div>
+					<check:if page_has_send_comment>
+						<a name="send_comment"></a>
+							<div class="comment-add-form">(*comment_add_form*)</div>
+					</check:if>
+				</box:page_detail>
+<!-- End Page Detail -->
+		        <box:pagination>
+		        	<div class="yekan" id="page_nav">
+		            	<check:if page_prev>
+		         	       <span><a href="(*page_prev*)">قبلی</a></span>
+		                </check:if>
+						<span class="pages_list">
+							<view:pages spec="5,2,4,2,3,2">
+								<check:if page_num>
+									<a class="(*page_current*)" href="(*page_link*)">(*page_num*)</a>
+								</check:if>
+								<check:if not page_num>
+									<span class="spacer">. . .</span>
+								</check:if>
+							</view:pages>
+						</span>
+						<check:if page_next>
+		                	<span><a href="(*page_next*)">بعدی</a></span>
+						</check:if>
+					</div>
+		        </box:pagination>
+        
+			</div> 
+<!-- End bodyposts  -->
+
+    		<div id="sidebar_wrp">
+    	
+<!-- Sidebar - Categories -->  
+				<box:categories>
+				  	<div class="sidebar">
+			           <h3>دسته بندی ها</h3>
+		               <div>
+						  <ul>
+							<view:categories>
+								<li class="(*category_selected*)">
+									<check:if category_selected>
+										<span class="category_selected">
+											<a>(*category_name*) ((*category_post_count*))</a>							
+									</span></check:if>
+									<check:if not category_selected>
+										<a href="(*category_link*)">(*category_name*) ((*category_post_count*))</a>
+									</check:if>
+									<check:if category_children>
+										<ul class="subcats">
+											<view:category_children></view:category_children>
+										</ul>
+									</check:if>
+								</li>
+							</view:categories>
+						  </ul>
+					   </div>
+				  	</div>
+				</box:categories>
+
+<!-- Sidebar - Ads -->   
+				<box:ads>
+					<div class="sidebar">
+						<h3>آکهی</h3>
+						<view:ads>
+							(*ad*)
+						</view:ads>
+					</div>
+				</box:ads>
+
+<!-- Sidebar - Recent -->   
+			    <box:recent_posts>
+			    	<div class="sidebar">
+						<h3>آخرین مطالب</h3>
+						<ul>
+							<view:recent_posts>
+								<li class="(*post_selected*)">
+									<a href="(*post_link*)">(*post_title*)</a>
+								</li>
+							</view:recent_posts>
+						</ul>
+					 </div>
+				</box:recent_posts>
+	   
+<!-- Sidebar - Most Visited --> 
+			   	<box:most_visited_posts>
+			   		<div class="sidebar">
+		    			<h3>پربیننده ترین مطالب</h3>
+						<ul>
+							<view:most_visited_posts>
+								<li class="(*post_selected*)">
+									<a href="(*post_link*)">(*post_title*)</a>
+								</li>
+							</view:most_visited_posts>
+						</ul>
+					</div>
+				</box:most_visited_posts>
+		
+<!-- Sidebar - Popular --> 
+				<box:popular_posts>
+					<div class="sidebar">
+						<h3>محبوب ترین مطالب</h3>
+						<ul>
+							<view:popular_posts>
+								<li class="(*post_selected*)">
+									<a href="(*post_link*)">(*post_title*)</a>
+								</li>
+							</view:popular_posts>
+						</ul>
+					</div>
+				</box:popular_posts>
+				
+<!-- Sidbar - Archive -->
+	        	<box:archive>
+	        		<div class="sidebar">
+	        			<h3>نوشته های پیشین</h3>
+						<ul>
+							<view:archive>
+								<li class="(*archive_selected*)">
+									<a href="(*link_url*)">(*link_name*) ((*link_count*))</a>						
+								</li>
+							</view:archive>
+						</ul>
+					</div>
+				</box:archive>
+		            
+<!-- Sidebar - Most Commented -->
+				<box:most_commented_posts>
+					<div class="sidebar">
+						<h3>مطالب پربحث‌تر</h3>
+						<ul>
+							<view:most_commented_posts>
+								<li class="(*post_selected*)">
+									<a href="(*post_link*)">(*post_title*)</a>
+								</li>
+							</view:most_commented_posts>
+						</ul>
+					</div>
+				</box:most_commented_posts>
+				
+<!-- Sidebar - Tags -->   
+			    <box:tag_cloud>
+			    	<div class="sidebar">	
+			    		<h3>کلمات کلیدی</h3>
+			    		<div id="tagbox">
+							<view:tag_cloud>
+								<a class="(*tag_selected*)" href="(*tag_link*)">(*tag_name*)</a>
+							</view:tag_cloud>
+			    		</div>
+			    	</div>
+				</box:tag_cloud>
+			</div>
+<!-- End sidebar_wrapper -->
+		<div style="clear: both;height:0px"> </div>	    
+	    </div>
+<!-- End of body_wrapper -->
+
+		<div id="footer">
+			<box:stat>
+				<div id="stat">
+					<view:stat>
+						<span class="stat_title">(*stat_title*)</span>
+						<span class="stat_value">(*stat_value*)</span>
+					</view:stat>
+				</div>
+			</box:stat>
+	    </div>
+<!-- End of footer -->
+	</div>
+<!-- end of container -->
+	
+<head:script></head:script>
+<script src="http://bayanbox.ir/id/2585157493431394475?download" type="text/javascript"></script>
+<script src="http://bayanbox.ir/id/6353413899525535287?download" type="text/javascript"></script>
+<script src="http://bayanbox.ir/id/6353413899525535287?download" type="text/javascript"></script>
+
+<script>
+    $( document ).ready(function() {
+        $('body').restive({
+            breakpoints: ['10000'],
+            classes: ['nb'],
+            turbo_classes: 'is_phone=phone,is_tablet=tablet,is_portrait=port,is_landscape=land,is_mobile=mobi'
+        });
+    });
+</script>
+</body></html>
