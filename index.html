@@ -24,8 +24,19 @@ a:link, a:visited, a:hover {
 	color:#696969;
 	text-decoration: none;
 }
-/* Fonts -----------------------------------------------------------------------*/
-
+#sidebar_wrp ul {
+	list-style-type: none; 
+}
+.comment-add-form input.sendbutton {
+    text-decoration: none;
+}
+    
+/* Text ------------------------------------------------------------------------*/
+body {
+	direction: rtl;
+	font-family: BRoya,'BRoya',tahoma;
+	-webkit-text-size-adjust: 100%;
+}
 .yekan, h1, h2, h3, 
 .item_success, #post_list_title, .messages, .comment_details, 
 .comment-add-form, .comment-add-form input.sendbutton {
@@ -34,35 +45,74 @@ a:link, a:visited, a:hover {
 h2, h3, .post_info {
 	font-weight: lighter;
 }
+#site_title {
+	font-size: 2em;
+}
+#site_title h2 {
+	font-size: 0.5em;
+}
 .post_body {
 	font-size: 1.1em;
 	font-weight: lighter;
-	line-height: 1.5em;	
 }
 post_footer, .comment-add-form input.sendbutton {
 	font-size: 1em;
 }
 .post_info, .comment_date {
 	font-size: 0.85em;
-	line-height: 1.5em;
+}
+body {
+    text-align: right;
+}
+#site_title, #menu, #page_nav, #stat,
+#comments_header, 
+.comment-add-form input.sendbutton {
+    text-align: center;
+}
+.post_comment, .sidebar, #footer, .post_body,
+.post_info, .comment_date {
+    line-height: 1.5em;
 }
 
 /* Colors ----------------------------------------------------------------------*/
 .post_info, #no_comments, .comment_date, #stat,
 #frmPrivateNotice, .smalltip {
-	color: #bebebe;
+	color: #95a5a6;
 }
-#site_title, .sidebar h3, .comment_reply, comment_website,
+.sidebar h3, .comment_reply, comment_website,
 .comment-add-form label, .comment-add-form input.sendbutton {
-	color: #696969;
+	color: #7f8c8d;
+}
+#site_title h2 {
+    color: #696969;
+}
+    
+.post_wrap h2 a {
+    color: black;
 }
 
-/* Other General Styles --------------------------------------------------------*/
-#sidebar_wrp ul {
-	list-style-type: none; 
+/* Borders ---------------------------------------------------------------------*/
+#menu {
+    border-top: 1px solid #95a5a6;  
 }
-
-
+#menu, .post_wrp, .post_body a, #page_nav, .comments_wrp, #comment_separater, #sidebar_wrp, .sidebar h3 {
+    border-bottom: 1px solid #95a5a6;
+}
+.post_tags a {
+    border-right: 1px solid #95a5a6;
+}
+.comments {
+    border-left: 1px solid #95a5a6;
+}
+#comments_counter, 
+.comment-add-form .inputFix input, 
+.comment-add-form .formField2 select, 
+.comment-add-form textarea, 
+.comment-add-form #captchaInput,
+.comment-add-form input.sendbutton {
+    border: 1px solid #95a5a6;
+}
+    
 /* Special Effects -------------------------------------------------------------*/
 #menu a, #page_nav a, .comment-add-form input.sendbutton {
 		-webkit-transition: background-color 200ms ease-out;
@@ -72,21 +122,13 @@ post_footer, .comment-add-form input.sendbutton {
 	    transition: all 200ms ease-out;
 }
 #menu a:hover, #page_nav a:hover, .comment-add-form input.sendbutton:hover {
-	background: #bebebe;
+	background: #7f8c8d;
 	color: white;
 }
 .selected {
-	
 }
 
 /* -----------------------------------------------------------------------------*/
-
-body {
-	text-align: right;
-	direction: rtl;
-	font-family: BRoya,'BRoya',tahoma;
-	-webkit-text-size-adjust: 100%;
-}
 #container {
 	width: 95%;
 	max-width: 675px;
@@ -96,19 +138,12 @@ body {
 }
 
 /* Top --------------------------------------------------------------- */
-#site_title {
-	font-size: 2em;
-	text-align: center;
-}
+
 #site_title h2 {
-	font-size: 0.5em;
 	margin-top: 0.5em;
 }
 #menu {
-	border-bottom: 1px solid #bebebe;
-	border-top: 1px solid #bebebe;
 	margin-top: 2em;
-	text-align: center;
 }
 #menu a {
 	padding: 1em 0.5em;
@@ -123,7 +158,6 @@ body {
 	margin-bottom: 2em;
 }
 .post_wrp {
-	border-bottom: 1px solid #bebebe;
 	margin-top: 2em;
 	padding-bottom: 2em;
 }
@@ -135,11 +169,20 @@ body {
 	width: 225px;
 	height: 225px;
 	overflow: hidden;
-	padding-right: 1em;
+    /*width:225px;
+    height:225px;
+    overflow:hidden;
+    position:relative;*/
 }
 .post_list_wrp .post_image a img {
-	width: auto;
+	width: 150%;
 	height: 100%;
+    position: relative;
+    left: 25%;
+    /*width:225px;
+    height:225px;
+    position:absolute;
+    left:-10px;top:-10px;*/
 }
 .post_wrp .post_image img {
 	width: 100%;
@@ -148,15 +191,11 @@ body {
 .post_body {
 	margin: 1em 0 1em 0.75em;
 }
-.post_body a {
-	border-bottom: 1px solid #bebebe;
-}
 .post_detail_wrp .post_info {
 	margin-bottom: 1em;
 }
 .post_tags a {
 	padding: 0 0.5em;
-	border-right: 1px solid #bebebe;
 }
 .post_list_wrp .rate-box {
 	margin-top: 0.5em;
@@ -165,11 +204,6 @@ body {
 	float: right;
 	padding-left: 0.5em;
 	margin-left: 0.5em;
-	border-left: 1px solid #bebebe; 
-}
-#page_nav {
-	text-align: center;
-	border-bottom: 1px solid #bebebe;
 }
 #page_nav a {
 	display: inline-block;
@@ -177,18 +211,13 @@ body {
 }
 
 /* Comments --------------------------------------------------------------- */
-.comments_wrp {
-	border-bottom: 1px solid #bebebe;
-}
 #comments_header {
 	margin-top: -2.5em;
-	text-align: center;
 	padding: 0 0 1em;
 }
 #comments_counter {
 	width: 3em;
 	padding: 1em 0;
-	border: 1px solid #bebebe;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
@@ -197,7 +226,6 @@ body {
 	background: white;
 }
 .post_comment {
-	line-height: 1.5em;
 	margin-bottom: 2em;
 }
 #no_comments {
@@ -217,7 +245,6 @@ body {
 	margin-bottom:1em;
 }
 #comment_separater {
-	border-bottom: 1px solid #bebebe;
 }
 /* Reply */
 .commentAvatar {
@@ -234,7 +261,6 @@ body {
 .comment-add-form textarea, 
 .comment-add-form #captchaInput {
 	outline: none;
-    border:1px solid #bebebe;
     -webkit-appearance: none;
     display: inline-block;
     padding: 10px 0.5em;
@@ -255,11 +281,8 @@ body {
 .comment-add-form input.sendbutton {
  	display: inline-block; 
  	padding: 0.5em 1em;
-    border: 1px solid #bebebe;
     background-color: white;
     vertical-align: top; 
-    text-align: center; 
-    text-decoration: none; 
     border-radius: 0;
     float: left;
 }
@@ -269,32 +292,22 @@ body {
 	overflow: hidden;
 	padding-bottom: 1em;
 	margin-bottom: 1em;
-	border-bottom: 1px solid #bebebe;
 }
 .sidebar {
 	float: right;
 	width: 33.333333333333%;
 	margin-bottom: 1em;
-	line-height: 1.5em;
-	
 }
 .sidebar h3 {
 	display: inline-block;
 	padding-bottom: 0.2em;
 	margin-bottom: 0.2em;
-	border-bottom: 1px solid #bebebe;
 }
 #tagbox a {
 	padding-left: 0.5em;
 }
 
 /* Footer --------------------------------------------------------------- */
-#footer {
-	line-height: 1.5em;
-}
-#stat {
-	text-align: center;
-}
 #stat .stat_value {
 	margin-left: 0.5em;
 }
@@ -406,13 +419,13 @@ body {
 <!-- Start Post Detail -->
 				<box:post_detail>
 			    	<div class="post_wrp post_detail_wrp">
-			            <h2><a href="(*post_link*)">(*post_title*)</a></h2>
-			            <div class="post_info yekan">(*post_date*)</div>
 						<check:if post_image>
 							<div class="post_image">
 								<a href="(*post_link*)"><img alt="(*post_title*)" src="(*post_image*)"></a>
 							</div>
 						</check:if>
+                        <h2><a href="(*post_link*)">(*post_title*)</a></h2>
+			            <div class="post_info yekan">(*post_date*)</div>
 					    <article class="post_body">(*post_full_content*)</article>
 					    <box:post_tags>
 							<span class="post_tags yekan">
@@ -451,9 +464,6 @@ body {
 							<div class="post_comment">
 								<div class="comment_details">
 									<a class="comment_name" href="(*comment_website*)">(*comment_fullname*)</a>
-									<check:if comment_website>
-										<a class="comment_website" href="(*comment_website*)" rel="nofollow" target="_blank" title="(*comment_website*)">🔗</a>
-									</check:if>
 									<div class="comment_date">(*comment_date format="%d %B %y"*)</div>
 								</div>
 								<div class="comment_body">(*comment_body*)</div>
@@ -662,6 +672,20 @@ body {
             classes: ['nb'],
             turbo_classes: 'is_phone=phone,is_tablet=tablet,is_portrait=port,is_landscape=land,is_mobile=mobi'
         });
+        
+        $('.fldcontent:last').css("display","none");
+        
+        /*
+        $('.post_list_wrp .post_image:first').css({
+            "float":"none",
+            "width":"100%",
+            "height":"auto",
+          });
+        $('.post_list_wrp .post_image a img:first').css({
+            "left":"0",
+            "width":"100%",
+            "height":"auto",
+          });*/
     });
 </script>
 </body></html>
