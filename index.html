@@ -42,24 +42,26 @@ body {
 .comment-add-form, .comment-add-form input.sendbutton {
 	font-family: BYekan,'BYekan',tahoma;
 }
-h2, h3, .post_info {
+h2, h3, .post_info, .post_body {
 	font-weight: lighter;
 }
-#site_title {
-	font-size: 2em;
+#site_title h1 {
+	font-size: 3em;
 }
-#site_title h2 {
-	font-size: 0.5em;
+.post_wrp h2 {
+    font-size: 1.8em;
 }
 .post_body {
 	font-size: 1.1em;
-	font-weight: lighter;
 }
-post_footer, .comment-add-form input.sendbutton {
+#site_title h2, .post_info, .post_footer, .comment-add-form input.sendbutton {
 	font-size: 1em;
 }
-.post_info, .comment_date {
-	font-size: 0.85em;
+.comment_date {
+	font-size: 0.9em;
+}
+.comment_body {
+  font-size: 1.1em;
 }
 body {
     text-align: right;
@@ -73,48 +75,63 @@ body {
 .post_info, .comment_date {
     line-height: 1.5em;
 }
+.comment-add-form .inputFix input, 
+.comment-add-form .formField2 select, 
+.comment-add-form textarea, 
+.comment-add-form #captchaInput {
+	font-size: 12pt;
+	color: #424242;
+	font-family: BRoya,'BRoya',tahoma;
+}
 
 /* Colors ----------------------------------------------------------------------*/
+body {
+    background-color: #f7f7fa;
+}
 .post_info, #no_comments, .comment_date, #stat,
 #frmPrivateNotice, .smalltip {
 	color: #95a5a6;
 }
-.sidebar h3, .comment_reply, comment_website,
+.comment_reply, comment_website,
 .comment-add-form label, .comment-add-form input.sendbutton {
 	color: #7f8c8d;
 }
-#site_title h2 {
+#site_title h2, .sidebar h3, .item_success {
     color: #696969;
+} 
+.post_wrp h2 a, #site_title h1 a, .post_body {
+    color: #424242;
 }
-    
-.post_wrap h2 a {
-    color: black;
+.post_tags a {
+    background-color: #ecf0f1;
 }
 
 /* Borders ---------------------------------------------------------------------*/
 #menu {
-    border-top: 1px solid #95a5a6;  
+    border-top: 3px solid #95a5a6;  
 }
-#menu, .post_wrp, .post_body a, #page_nav, .comments_wrp, #comment_separater, #sidebar_wrp, .sidebar h3 {
+#menu, .post_wrp, .post_body a, #page_nav, 
+.comments_wrp, #comment_separater, .item_success a, 
+#sidebar_wrp, .sidebar h3 {
     border-bottom: 1px solid #95a5a6;
-}
-.post_tags a {
-    border-right: 1px solid #95a5a6;
 }
 .comments {
     border-left: 1px solid #95a5a6;
 }
-#comments_counter, 
 .comment-add-form .inputFix input, 
 .comment-add-form .formField2 select, 
 .comment-add-form textarea, 
 .comment-add-form #captchaInput,
 .comment-add-form input.sendbutton {
-    border: 1px solid #95a5a6;
+    border: 1px solid #ecf0f1;
+}
+#comments_counter {
+	border: 1px solid #95a5a6;	
 }
     
 /* Special Effects -------------------------------------------------------------*/
-#menu a, #page_nav a, .comment-add-form input.sendbutton {
+#menu a, #page_nav a, .post_footer a, #tagbox a,
+.comment-add-form input.sendbutton {
 		-webkit-transition: background-color 200ms ease-out;
 	    -moz-transition: all 200ms ease-out;  
 	    -ms-transition: all 200ms ease-out;  
@@ -125,16 +142,20 @@ body {
 	background: #7f8c8d;
 	color: white;
 }
+.post_footer a:hover, #tagbox a:hover {
+  background-color: #ecf0f1;
+}
 .selected {
 }
 
+.post_tags a, .post_footer a, #tagbox a {
+    border-radius: 0.2em;
+}
 /* -----------------------------------------------------------------------------*/
 #container {
 	width: 95%;
 	max-width: 675px;
-	margin: auto;
-	margin-top: 3em;
-	margin-bottom: 2em;
+	margin: 3em auto 2em;
 }
 
 /* Top --------------------------------------------------------------- */
@@ -184,18 +205,22 @@ body {
     position:absolute;
     left:-10px;top:-10px;*/
 }
-.post_wrp .post_image img {
+.post_detail_wrp .post_image img {
 	width: 100%;
 	height: auto;
+    margin-bottom: 1em;
 }
 .post_body {
-	margin: 1em 0 1em 0.75em;
+	margin: 1em 0 1em;
+}
+.post_footer a {
+    padding: 0.2em 0;
 }
 .post_detail_wrp .post_info {
 	margin-bottom: 1em;
 }
 .post_tags a {
-	padding: 0 0.5em;
+	padding: 0.2em 0.6em;
 }
 .post_list_wrp .rate-box {
 	margin-top: 0.5em;
@@ -223,7 +248,7 @@ body {
 	border-radius: 50%;
 	display: block;
 	margin: auto;
-	background: white;
+	background: #f7f7fa;
 }
 .post_comment {
 	margin-bottom: 2em;
@@ -232,7 +257,7 @@ body {
 	padding-top: 0.5em;
 }
 .comment_body {
-	margin: 0.5em 0 1em;
+	padding-bottom: 1em;
 	margin: auto;
 	width: 66%;
 }
@@ -245,13 +270,14 @@ body {
 	margin-bottom:1em;
 }
 #comment_separater {
+	padding-top: 1em;
 }
 /* Reply */
 .commentAvatar {
 	display: none;
 }
 .comment-add-form {
-	padding: 1em 0;
+	padding: 2em 0;
 	line-height: 2em;
 	width: 66%;
 	margin: auto;
@@ -263,16 +289,14 @@ body {
 	outline: none;
     -webkit-appearance: none;
     display: inline-block;
-    padding: 10px 0.5em;
+    padding: 7px 2% 7px 0;
 	border-radius: 0;
 }
 .comment-add-form .inputFix input, .comment-add-form .formField2 select {
 	width: 50%;
 }
 .comment-add-form textarea {
-	width: 100%;
-	padding-left: 0;
-	padding-right: 0;
+	width: 98%;
 }
 #captchaInput{
 	float: right;
@@ -285,6 +309,9 @@ body {
     vertical-align: top; 
     border-radius: 0;
     float: left;
+}
+.bComForm > .formField2:nth-last-child(3) {
+display: none;
 }
 
 /* Sidebar --------------------------------------------------------------- */
@@ -304,12 +331,16 @@ body {
 	margin-bottom: 0.2em;
 }
 #tagbox a {
-	padding-left: 0.5em;
+	padding: 0.2em 0.6em;
 }
 
 /* Footer --------------------------------------------------------------- */
+#stat {
+	padding-top: 1em;
+}
 #stat .stat_value {
 	margin-left: 0.5em;
+
 }
 
 /* Adaptive --------------------------------------------------------------- */
@@ -320,27 +351,65 @@ body {
     height: 0;
     padding-bottom: 100%;
 }*/
-.phone.port .post_list_wrp .post_image {
-	width: 100%;
-	margin-bottom: 1em;
+
+@media only screen and (max-width : 650px)    {
+    .sidebar {
+	   width: 50%;
+    }
+    .comment-add-form .inputFix input, .comment-add-form .formField2 select {
+	width: 65%;
 }
-.phone.port .comment-add-form,
-.phone.port .comment-add-form .inputFix input, 
-.phone.port .comment-add-form .formField2 select, 
-.phone.port .comment-add-form textarea {
-	width: 95%;
+}    
+@media only screen and (max-width : 500px) {
+    #container {
+        margin: 1.5em auto 1em;
+        width: 100%;
+    }
+    h2, .post_info, .post_body, .post_footer,#sidebar_wrp, #footer, .post_comment {
+    width: 95%;
+    margin: auto;
+  }
+    .post_wrp {
+        border-bottom-width: 0;
+    }
+    .post_list_wrp .post_image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+        overflow: visible;
+    }
+    .post_list_wrp .post_image a img {
+        width: 100%;
+        left: 0;
+    }
+    .post_info {
+        margin-bottom: 1em;
+    }
+    .post_footer {
+        margin-top: 1em;
+    }
+    #comments_header {
+        border-top: 1px solid #95a5a6;
+        margin-top: 1em;
+    }
+    .comment_body{
+    	width: 80%;
+  	}
+  	#comments_counter {
+        margin-top: -1.5em;
+    }
+    .comment-add-form,
+    .comment-add-form .formField2 select {
+	   width: 94%;
+    }
+    .comment-add-form .inputFix input {
+    width: 98%
+    }
+    .sidebar {
+        width: 100%;
+    }
 }
-.mobi .comment-add-form #frm_anon, 
-.mobi .comment-add-form #frm_isprivate, 
-.mobi .comment-add-form #frm_hide_mail {
-	padding: 1em;
-}
-.phone.port .sidebar {
-	width: 100%;
-}
-.phone.land .sidebar {
-	width: 50%;
-}
+
 </style>
 
 </head>
@@ -355,11 +424,13 @@ body {
 		</div>
 		
 		<div class="yekan" id="menu">
+            <div>
 			<box:menu>
 				<view:menu>
 					<a class="(*menu_item_selected*)" href="(*menu_item_link*)">(*menu_item_title*)</a>
 				</view:menu>
 			</box:menu>
+            </div>
 		</div>
 		
 		<div id="header">
@@ -652,6 +723,7 @@ body {
 					<view:stat>
 						<span class="stat_title">(*stat_title*)</span>
 						<span class="stat_value">(*stat_value*)</span>
+                        <wbr/>
 					</view:stat>
 				</div>
 			</box:stat>
@@ -661,31 +733,4 @@ body {
 <!-- end of container -->
 	
 <head:script></head:script>
-<script src="http://bayanbox.ir/id/2585157493431394475?download" type="text/javascript"></script>
-<script src="http://bayanbox.ir/id/6353413899525535287?download" type="text/javascript"></script>
-<script src="http://bayanbox.ir/id/6353413899525535287?download" type="text/javascript"></script>
-
-<script>
-    $( document ).ready(function() {
-        $('body').restive({
-            breakpoints: ['10000'],
-            classes: ['nb'],
-            turbo_classes: 'is_phone=phone,is_tablet=tablet,is_portrait=port,is_landscape=land,is_mobile=mobi'
-        });
-        
-        $('.fldcontent:last').css("display","none");
-        
-        /*
-        $('.post_list_wrp .post_image:first').css({
-            "float":"none",
-            "width":"100%",
-            "height":"auto",
-          });
-        $('.post_list_wrp .post_image a img:first').css({
-            "left":"0",
-            "width":"100%",
-            "height":"auto",
-          });*/
-    });
-</script>
 </body></html>
