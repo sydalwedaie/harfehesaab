@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Designed By Sayed Ali Alwedaie V 1.0 2014 --><html lang="fa"><head>
+<!DOCTYPE html><!-- Designed By Sayed Ali Alwedaie V 1.1 2014 --><html lang="fa"><head>
 
 <head:meta></head:meta>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
@@ -113,10 +113,10 @@ body {
 #menu, .post_wrp, .post_body a, #page_nav, 
 .comments_wrp, #comment_separater, .item_success a, 
 #sidebar_wrp, .sidebar h3 {
-    border-bottom: 1px solid #95a5a6;
+    border-bottom: 1px solid #cccccc;
 }
 .comments {
-    border-left: 1px solid #95a5a6;
+    border-left: 1px solid #cccccc;
 }
 .comment-add-form .inputFix input, 
 .comment-add-form .formField2 select, 
@@ -126,7 +126,7 @@ body {
     border: 1px solid #ecf0f1;
 }
 #comments_counter {
-	border: 1px solid #95a5a6;	
+	border: 1px solid #cccccc;	
 }
     
 /* Special Effects -------------------------------------------------------------*/
@@ -372,6 +372,9 @@ display: none;
     .post_wrp {
         border-bottom-width: 0;
     }
+    .post_wrp:nth-last-child(1) {
+    border-bottom-width: 1px;
+  }
     .post_list_wrp .post_image {
         width: 100%;
         height: auto;
@@ -389,7 +392,7 @@ display: none;
         margin-top: 1em;
     }
     #comments_header {
-        border-top: 1px solid #95a5a6;
+        border-top: 1px solid #cccccc;
         margin-top: 1em;
     }
     .comment_body{
@@ -403,11 +406,14 @@ display: none;
 	   width: 94%;
     }
     .comment-add-form .inputFix input {
-    width: 98%
+    	width: 98%
     }
     .sidebar {
-        width: 100%;
-    }
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
 }
 
 </style>
@@ -552,7 +558,9 @@ display: none;
 					<check:if post_has_send_comment>
 						<a name="send_comment"></a>
 						<div class="comment-add-form">(*comment_add_form*)</div>
+						<div id="comment_separater"></div>
 					</check:if>
+
 				</box:post_detail>
 <!-- End Post Detail -->
 <!-- Start Page Detail -->
